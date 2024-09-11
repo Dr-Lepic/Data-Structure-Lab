@@ -1,0 +1,10 @@
+.DS_Store
+*.cph
+*.bin
+*.yml
+*.dylib
+*.dSYM
+*.o
+*.exec
+Test
+Lab1/Task
