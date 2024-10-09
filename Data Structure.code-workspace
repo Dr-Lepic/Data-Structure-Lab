@@ -1,0 +1,28 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"__split_buffer": "cpp",
+			"array": "cpp",
+			"deque": "cpp",
+			"forward_list": "cpp",
+			"list": "cpp",
+			"queue": "cpp",
+			"string": "cpp",
+			"string_view": "cpp",
+			"vector": "cpp",
+			"__bit_reference": "cpp",
+			"__hash_table": "cpp",
+			"__tree": "cpp",
+			"initializer_list": "cpp",
+			"map": "cpp",
+			"set": "cpp",
+			"unordered_map": "cpp",
+			"unordered_set": "cpp"
+		}
+	}
+}
