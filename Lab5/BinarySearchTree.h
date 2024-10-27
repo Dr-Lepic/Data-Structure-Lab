@@ -63,20 +63,9 @@ class BinarySearchTree{
                 //recursively calculate height of the BST
                 int height(){
                     if(this == nullptr){
-                        return 0;
+                        return -1;
                     }
-                    else{
-                        int left_height = left_child->height();
-                        int right_height = right_child->height();
-                        
-                        if(left_height>right_height){
-                            return 1 + left_height;
-                        }
-                        else{
-                            return 1 + right_height;
-                        }
-                        
-                    }
+                    return 1 + std::max(left_child->height(), right_child->height());
                 }   
                 
                 //find the minimum element in the BST
@@ -161,7 +150,7 @@ class BinarySearchTree{
                         }
                         else{
                             node->node_value = node->right_child->front();
-                            erase(node->node_value, node->right_child);
+                            return erase(node->node_value, node->right_child);
                         }
                     }
                     else if(value < node->value()){
