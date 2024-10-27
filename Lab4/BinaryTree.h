@@ -127,6 +127,22 @@ class BinaryTree{
         void DFS_traversal() const {
             DFS_traversal(root);
         }
+
+        void DFS_travarsal_stack(BinaryNode* node) const{
+            stack<BinaryNode*> node_stack;
+            node_stack.push(node);
+            while(!node_stack.empty()){
+                BinaryNode* current_node = node_stack.top();
+                node_stack.pop();
+                cout<<current_node->value()<<" ";
+                if(current_node->getRight() != nullptr){
+                    node_stack.push(current_node->getRight());
+                }
+                if(current_node->getLeft() != nullptr){
+                    node_stack.push(current_node->getLeft());
+                }
+            }
+        }
         
 
 
