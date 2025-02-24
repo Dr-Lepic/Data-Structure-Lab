@@ -33,9 +33,9 @@ int main(){
     cout<<endl;
     cout<<"Checks: "<<check<<endl;
 
-    int arr2[3] = {5, 3, 2}; 
-    check = BubbleSort(arr2, 3);
-    for (int i = 0; i < 3; i++)
+    int arr2[5] = {5, 2,1, 3, 4}; 
+    check = QuickSort(arr2, 0, 4);
+    for (int i = 0; i < 5; i++)
     {
         
         cout<<arr2[i]<<" ";

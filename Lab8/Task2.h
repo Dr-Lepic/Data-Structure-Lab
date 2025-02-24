@@ -24,23 +24,40 @@ int BubbleSort(int *arr, int n){
     return check;
 }
 
+void swap(int *a, int *b){
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+int medianOfThree(int *arr, int left, int right) {
+    int mid = left + (right - left) / 2;
+    if (arr[left] > arr[mid])
+        swap(&arr[left], &arr[mid]);
+    if (arr[left] > arr[right])
+        swap(&arr[left], &arr[right]);
+    if (arr[mid] > arr[right])
+        swap(&arr[mid], &arr[right]);
+    return mid;
+}
+
 int QuickSort(int *arr, int left, int right){
     int check = 0;
     if(left < right){
-        int pivot = arr[right];
-        int i = left -1;
+        int median = medianOfThree(arr, left, right);        
+        int i = left - 1;
         for(int j = left; j < right; j++){
             check++;
-            if(arr[j] < pivot){
+            if(arr[j] < median){
                 i++;
-                swap(arr[i], arr[j]);
-                check++;
-            }
-            else{
-                check++;
+                swap(&arr[i], &arr[j]);
             }
         }
-        
-
+        swap(&arr[i+1], &arr[right]);
+        check++;
+        int pi = i+1;
+        check += QuickSort(arr, left, pi-1);
+        check += QuickSort(arr, pi+1, right);
     }
+    return check;
 }
+
