@@ -4,7 +4,7 @@ using namespace std;
 int main(){
     unordered_map<int, int> numbers;
     int num;
-    int temp;
+    int temp = -1;
     bool flag = true;
     int i = 0;
 
